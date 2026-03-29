@@ -10,9 +10,24 @@ nav{
     filter: blur(50%);
 }
 
+.Nav-Link{
+    font-family: Poppins;
+    color: white;
+}
+
+.Nav-Link:hover{
+    color: #F0660C;
+}
+
 a{
     text-decoration: none;
 color: white;}
+
+a:hover{
+color: #F0660C;
+transition: all 0.3s ease;
+font-weight: 700;
+}
 
 ul{ text-decoration: none;}
 
