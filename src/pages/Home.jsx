@@ -2,25 +2,35 @@ import React from "react";
 import Nav from "../components/Nav";
 import "./Home.css";
 import Carousel from "../components/Carousel";
-import Carouselimg1 from "../assets/Imgs/Carousel-img (1).png";
-import Carouselimg2 from "../assets/Imgs/Carousel-img (2).png";
-import Carouselimg3 from "../assets/Imgs/Carousel-img (3).png";
-import Carouselimg4 from "../assets/Imgs/Carousel-img (4).png";
-import Carouselimg5 from "../assets/Imgs/Carousel-img (5).png";
-import Carouselimg6 from "../assets/Imgs/Carousel-img (6).png";
-import Carouselimg7 from "../assets/Imgs/Carousel-img (7).png";
-import Carouselimg8 from "../assets/Imgs/Carousel-img (8).png";
-import Carouselimg9 from "../assets/Imgs/Carousel-img (9).png";
-import Carouselimg10 from "../assets/Imgs/Carousel-img (10).png";
-import Carouselimg11 from "../assets/Imgs/Carousel-img (11).png";
-import Carouselimg12 from "../assets/Imgs/Carousel-img (12).png";
-import Carouselimg13 from "../assets/Imgs/Carousel-img (13).png";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <>
       <Nav />
-      [ ];
+        
+
+        {/* NEW: Smooth Text Animation Layer */}
+      <div className="hero-overlay">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="hero-text"
+        >
+          <h1 className="hero-title">Senet</h1>
+          <p className="hero-subtitle">Bringing Global Flavors to Your Kitchen with AR</p>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="hero-btn"
+          >
+            Explore Recipes
+          </motion.button>
+        </motion.div>
+      </div>
+      
+        
       <Carousel
         items={[
           "https://pub-aaa82e9851064d22b954c3ebbafc9ae6.r2.dev/legacy/webp/burger-with-melted-cheese-m-Y1i3jpYYJZYfOEfX5dX.webp",
@@ -56,6 +66,10 @@ const Home = () => {
         ]}
         gradientColor="#F0660C"
       />
+    
+
+
+
     </>
   );
 };

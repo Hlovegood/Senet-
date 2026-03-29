@@ -79,8 +79,13 @@ const Carousel = ({ items = [], gradientColor = 'black' }) => {
                 );
               })}
             </div>
+
+            
           ))}
         </div>
+
+        {/* Add this line here */}
+  <div className="glass-overlay"></div>
         <div className="fullview"></div>
       </section>
     </div>

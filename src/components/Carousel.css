@@ -5,7 +5,6 @@
 }
 
 .intro {
-  width: 100%;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -37,6 +36,7 @@
   transform: rotate(-15deg);
   transform-origin: center center;
   z-index: 2;
+  filter: blur(50%);
 }
 
 .row {
@@ -91,4 +91,36 @@
 
 .fullview .row__item-inner {
   border-radius: 0px;
+}
+
+/* This sits on top of everything to create the frosted effect */
+.glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 1. High Z-Index to stay above the grid (which is z-index 2) */
+  z-index: 10; 
+  
+  /* 2. Background color (White or Black with low opacity) */
+  background: rgba(34, 34, 34, 0.514); 
+  
+  /* 3. The Frosting (Backdrop filter is key) */
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  
+  /* 4. Glass shine/texture */
+  background-image: linear-gradient(
+    135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0) 50%, 
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  
+  /* 5. Allow clicks to pass through to the images if needed */
+  pointer-events: none; 
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
