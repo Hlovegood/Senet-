@@ -29,7 +29,7 @@ const Home = () => {
   
   useEffect(() => {
     const handleGlobalMouseMove = (e) => {
-      const threshold = 1000; 
+      const threshold = 600; 
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
 
@@ -80,7 +80,9 @@ const Home = () => {
         <Carousel items={carouselImages} gradientColor="#F0660C" />
       )}
     </div>
+    
   );
+  
 };
 
 export default Home;
