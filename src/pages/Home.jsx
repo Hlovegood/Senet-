@@ -81,8 +81,8 @@ const Home = () => {
         <Carousel items={carouselImages} gradientColor="#F0660C" />
       )}
 
-      <section>
-      <h2>
+      <section className="Dicover">
+      <h2 className="Discover-hero-txt">
         Discover the features of Senet
       </h2>
 

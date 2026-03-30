@@ -20,6 +20,7 @@ body{
     background-image: url(../assets/Imgs/BG.png);
     background-size: cover;
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 Nav {
@@ -27,13 +28,10 @@ Nav {
     top: 20px; 
     left: 50%;
     transform: translateX(-50%); 
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
     z-index: 1000;
-    
     width: auto; 
     white-space: nowrap; 
 }
@@ -108,4 +106,121 @@ Nav {
     flex-direction: row;
     gap: 24px;
     justify-content: center;
+}
+
+.Discover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+}
+
+.Discover-hero-txt{
+    font-family: Poppins;
+    color: white;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+}
+
+
+
+.drawer-toggle-btn {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; 
+    background-color: #F0660C;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
+}
+
+.drawer-toggle-btn:hover {
+    background-color: #d85a0a;
+}
+
+
+.side-plate-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35vw; 
+    height: 100vh; 
+    z-index: 1000; 
+    box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+
+.tray-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    pointer-events: none;
+}
+
+.drawer-content-overlay {
+    position: relative;
+    z-index: 10;
+    width: 80%; 
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+    font-family: 'Poppins', sans-serif;
+    color: white; 
+}
+
+.drawer-content-overlay h2 {
+    text-align: center;
+    color: #F0660C;
+    margin-bottom: 20px;
+    font-family: 'Brigten', serif; 
+}
+
+.feature-item-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-top: 5px; 
+}
+
+.feature-text h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #F0660C;
+}
+
+.feature-text p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.8;
 }
