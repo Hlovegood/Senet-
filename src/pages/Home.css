@@ -20,7 +20,6 @@ body{
     background-image: url(../assets/Imgs/BG.png);
     background-size: cover;
     scroll-behavior: smooth;
-    overflow: hidden;
 }
 
 Nav {
@@ -123,104 +122,157 @@ Nav {
     text-align: center;
 }
 
-
-
-.drawer-toggle-btn {
+/* Container for the whole tray */
+.features-tray-container {
     position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001; 
-    background-color: #F0660C;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s ease;
-}
-
-.drawer-toggle-btn:hover {
-    background-color: #d85a0a;
-}
-
-
-.side-plate-drawer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 35vw; 
-    height: 100vh; 
-    z-index: 1000; 
-    box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.5);
+    bottom: -20px; /* Slight tuck under the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px; /* Adjust based on your image width */
+    height: 500px;
+    z-index: 1001;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; 
 }
 
-
-.tray-background {
+.tray-bg-img {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: center; 
-    pointer-events: none;
+    object-fit: contain;
+    z-index: 1;
 }
 
-.drawer-content-overlay {
+.tray-content {
     position: relative;
-    z-index: 10;
-    width: 80%; 
-    height: auto;
+    z-index: 2;
+    text-align: center;
+    width: 80%;
+    padding-bottom: 40px; /* Adjust based on tray position */
+}
+
+.tray-title {
+    font-family: 'Brigten';
+    color: #4a0000; /* Darker red from your image */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.features-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* THE DIVS YOU WANTED TO STYLE */
+.feature-card {
+    background: linear-gradient(180deg, #F0660C 0%, #a84504 100%);
+    width: 220px;
+    padding: 30px 15px;
+    border-radius: 25px;
+    color: white;
+    font-family: 'Poppins';
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
-    gap: 30px; 
-    font-family: 'Poppins', sans-serif;
-    color: white; 
-}
-
-.drawer-content-overlay h2 {
+    align-items: center;
     text-align: center;
-    color: #F0660C;
-    margin-bottom: 20px;
-    font-family: 'Brigten', serif; 
 }
 
-.feature-item-container {
+.card-icon {
+    width: 40px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.Dicover {
+    position: relative;
+    width: 100%;
+    min-height: 600px; /* Gives space for the tray to appear */
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-    background-color: rgba(255, 255, 255, 0.05); 
-    backdrop-filter: blur(5px);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    overflow: hidden; /* Clips the tray if it moves too far down */
 }
 
-.feature-icon {
-    width: 48px;
-    height: 48px;
+.features-tray-wrapper {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1000px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tray-bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    margin-top: 5px; 
+    z-index: 1;
 }
 
-.feature-text h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #F0660C;
+.tray-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 75%;
 }
 
-.feature-text p {
-    margin: 5px 0 0 0;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    opacity: 0.8;
+.tray-title {
+    font-family: 'Brigten';
+    color: #4a0000;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: linear-gradient(180deg, #F0660C 0%, #a84504 100%);
+    flex: 1;
+    max-width: 200px;
+    padding: 25px 15px;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Poppins';
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-icon {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 0.7rem;
+    line-height: 1.3;
 }
