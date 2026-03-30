@@ -19,15 +19,26 @@ body{
     height: 100vh;
     background-image: url(../assets/Imgs/BG.png);
     background-size: cover;
+    scroll-behavior: smooth;
 }
 
-Nav{
+Nav {
     position: fixed;
-    top: 0;
-    left: 35%;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
     z-index: 1000;
-
+    
+    width: auto; 
+    white-space: nowrap; 
 }
+
+
 
 .Carousel{
     position: relative;

@@ -47,6 +47,7 @@ const Home = () => {
 
   return (
     <div className="home-wrapper">
+      
       <Nav />
       
       <div className="hero-overlay">
@@ -79,6 +80,15 @@ const Home = () => {
       {carouselImages.length > 0 && (
         <Carousel items={carouselImages} gradientColor="#F0660C" />
       )}
+
+      <section>
+      <h2>
+        Discover the features of Senet
+      </h2>
+
+
+
+      </section>
     </div>
     
   );
