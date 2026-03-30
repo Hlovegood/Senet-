@@ -41,6 +41,7 @@ Nav{
     top: 0;
     left: 0;
     width: 100%;
+    overflow-x: hidden;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -90,4 +91,11 @@ Nav{
 
 .hero-btn:hover {
     background-color: #d85a0a;
+}
+
+.Buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
 }
