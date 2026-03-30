@@ -6,11 +6,12 @@ import { motion } from "framer-motion";
 import { supabase } from "../supabase"; 
 import Logo from "../assets/Imgs/Senet Logo.png"
 
-// ICONS AND IMAGES
+// ICONS AND IMAGES AND VIDEOS
 import UserIcon from "../assets/Icons/Profile-Icon.png";
 import EditIcon from "../assets/Icons/Edit-Icon.png";
 import LayersIcon from "../assets/Icons/Layers-Icon.png";
 import Seneya from "../assets/Imgs/Seneya.png";
+import video from "../assets/Videos/Marketing Video.mp4"
 
 const Home = () => {
   const [carouselImages, setCarouselImages] = useState([]);
@@ -149,6 +150,29 @@ const Home = () => {
           </div>
         </motion.div>
       </section>
+
+      
+{/* VIDEO SECTION */}
+<section className="video-section">
+  <motion.video 
+    src={video} 
+    controls 
+    autoPlay 
+    loop 
+    muted 
+    className="promo-video"
+    initial={{ width: "80%", height: "auto", borderRadius: "20px" }}
+    whileHover={{ 
+      width: "100%", 
+      height: "100vh", 
+      borderRadius: "0px",
+      scale: 1, // Reset scale if you were using it before
+      transition: { duration: 0.5, ease: "easeInOut" } 
+    }}
+    style={{ zIndex: 999 }} // Ensures it goes over the Nav/Overlay
+  />
+</section>
+
     </div>
   );
 };
