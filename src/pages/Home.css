@@ -35,7 +35,6 @@ Nav{
     padding: 0;
 }
 
-/* Container to hold the floating text */
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -46,20 +45,20 @@ Nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    pointer-events: none; /* Allows mouse to pass through to the Carousel move effect */
-    z-index: 20; /* Higher than the glass-overlay (10) */
+    pointer-events: none; 
+    z-index: 20; 
 }
 
 .hero-text {
     text-align: center;
-    pointer-events: auto; /* Re-enables clicking on the button/text */
+    pointer-events: auto; 
     color: white;
     font-family: Poppins;
     width: 50%;
 }
 
 .hero-title {
-    font-size: clamp(3rem, 10vw, 6rem); /* Responsive size */
+    font-size: clamp(3rem, 10vw, 6rem); 
     margin: 0;
     font-weight: 800;
     text-transform: uppercase;

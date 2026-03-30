@@ -4,71 +4,82 @@ import "./Home.css";
 import Carousel from "../components/Carousel";
 import { motion } from "framer-motion";
 import { supabase } from "../supabase"; 
+import Logo from "../assets/Imgs/Senet Logo.png"
 
 const Home = () => {
   const [carouselImages, setCarouselImages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isNear, setIsNear] = useState(true);
 
+  
   useEffect(() => {
     const fetchImages = async () => {
-      try {
-        setLoading(true);
-        // UPDATED TABLE NAME HERE: Recipes_images
-        const { data, error } = await supabase
-          .from('Recipes_images') 
-          .select('image_url');
-        
-        if (error) throw error;
-
-        if (data) {
-          // Map the array of objects to an array of strings for the Carousel
-          const imageUrls = data.map(item => item.image_url);
-          setCarouselImages(imageUrls);
-        }
-      } catch (error) {
-        console.error("Error fetching from Supabase:", error.message);
-      } finally {
-        setLoading(false);
+      const { data, error } = await supabase
+        .from('Recipes_images')
+        .select('image_url');
+      
+      if (error) {
+        console.error("Supabase Error:", error);
+      } else if (data) {
+        setCarouselImages(data.map(item => item.image_url));
       }
     };
-
     fetchImages();
   }, []);
 
+  
+  useEffect(() => {
+    const handleGlobalMouseMove = (e) => {
+      const threshold = 1000; 
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+
+      
+      const distance = Math.sqrt(
+        Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
+      );
+
+      setIsNear(distance < threshold);
+    };
+
+    window.addEventListener("mousemove", handleGlobalMouseMove);
+    return () => window.removeEventListener("mousemove", handleGlobalMouseMove);
+  }, []);
+
   return (
-    <>
+    <div className="home-wrapper">
       <Nav />
       
       <div className="hero-overlay">
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ 
+            opacity: isNear ? 1 : 0, 
+            y: isNear ? 0 : 30,
+            scale: isNear ? 1 : 0.9 
+          }}
+          transition={{ duration: 0.6, ease: "backOut" }}
           className="hero-text"
+          style={{ pointerEvents: isNear ? "auto" : "none" }}
         >
-          <h1 className="hero-title">Senet</h1>
+          <div className="hero-title"><img src={Logo} alt="" /></div>
           <p className="hero-subtitle">Bringing Global Flavors to Your Kitchen with AR</p>
 
           <article className="Buttons">
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hero-btn">
+            <motion.button whileHover={{ scale: 1.05 }} className="hero-btn">
               Download For Android
             </motion.button>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hero-btn">
+            <motion.button whileHover={{ scale: 1.05 }} className="hero-btn">
               Download For IOS
             </motion.button>
           </article>
         </motion.div>
       </div>
       
-      {/* Only render Carousel if we have images. 
-         This prevents the Carousel from breaking while data is 'null' 
-      */}
-      {!loading && carouselImages.length > 0 ? (
+      
+      {carouselImages.length > 0 && (
         <Carousel items={carouselImages} gradientColor="#F0660C" />
-      ) : (
-        <div className="loading-state">Loading Flavors...</div>
       )}
-    </>
+    </div>
   );
 };
 
