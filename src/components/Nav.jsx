@@ -12,7 +12,7 @@ const Nav = () => {
 
     <ul className='Nav-Cont'>
         <li className='Nav-link'><Link to="/"><img src={Senet} alt="" /></Link></li>
-        <li className='Nav-link'><Link to ="/AR-Page">AR</Link></li>
+        <li className='Nav-link'><Link to ="/ar-tech">AR</Link></li>
         <li className='Nav-link'><Link to ="/Contact">Contact</Link></li>
         <li className='Nav-link'><Link to="/Reviews-Page">Community</Link></li>
         <li className='Nav-link'><Link to="/Feed-Page">Feed</Link></li>
