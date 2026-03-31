@@ -1,10 +1,9 @@
 .cuisine-section {
     width: 100%;
-    padding: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent; /* Background removed as requested */
+    background: transparent; 
     overflow: hidden;
     position: relative;
 }
@@ -28,7 +27,6 @@
     justify-content: center;
     position: absolute;
     border-radius: 40px;
-    /* The linear gradient remains on the card itself to highlight the dish */
 }
 
 .plate-wrapper {
@@ -40,7 +38,6 @@
     height: 350px;
 }
 
-/* Plate styling - NO SHADOWS */
 .main-plate {
     width: 280px;
     height: 280px;

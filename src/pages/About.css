@@ -1,0 +1,112 @@
+.about-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 100px;
+}
+
+.about-container {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+
+.Brigten { font-family: 'Brigten', serif; } /* Your custom font */
+
+.about-header h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    color: white;
+    text-align: center;
+}
+
+.subtitle {
+    color: #ffd8bb;
+    text-align: center;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 20px auto 60px;
+}
+
+/* Gradients */
+.orange-grad { background: linear-gradient(135deg, #F0660C, #BD5009); }
+.green-grad { background: linear-gradient(135deg, #00804D, #004029); }
+
+/* Cards */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 24px;
+}
+
+.story-card {
+    padding: 50px;
+    border-radius: 40px;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.story-card h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+.image-holder img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.rot-left { transform: rotate(-3deg); transition: 0.3s; }
+.rot-left:hover { transform: rotate(0deg); }
+
+/* Features */
+.features-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 100px;
+    padding: 24px;
+}
+
+.feature-box {
+    padding: 40px;
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+}
+
+.emoji { font-size: 3rem; display: block; margin-bottom: 20px; }
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 80px;
+    border-radius: 50px;
+    color: white;
+}
+
+.btn-group { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+.btn-white {
+    padding: 15px 35px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    color: #00804D;
+    transition: 0.3s;
+}
+
+/* Decorative Icons Positioning */
+.deco-icon {
+    position: absolute;
+    width: 100px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.t-10 { top: 10%; } .l-10 { left: 10%; }
+.t-40 { top: 40%; } .r-20 { right: 10%; }
+.b-20 { bottom: 20%; } .l-32 { left: 15%; }

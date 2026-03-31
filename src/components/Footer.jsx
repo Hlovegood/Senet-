@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import "./Footer.css";
+import { Link} from "react-router-dom";
 
 // ASSETS
 import SenetLogo from "../assets/Imgs/Senet Logo.png";
 import InstaIcon from "../assets/Icons/Profile-Icon.png"; // Replace with your actual icons
 import FbIcon from "../assets/Icons/Edit-Icon.png";
 import TkIcon from "../assets/Icons/Layers-Icon.png";
+import { AboutPage } from "../pages/About";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -88,6 +90,7 @@ const Footer = () => {
               <span>© 2026 Senet. All rights reserved.</span>
               <a href="#privacy">Privacy Policy</a>
               <a href="#terms">Terms of Service</a>
+              <Link to= "/about">About</Link>
             </div>
           </div>
 
