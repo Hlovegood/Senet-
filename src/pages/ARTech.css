@@ -4,11 +4,11 @@
   position: relative;
   overflow-x: hidden;
   padding-bottom: 100px;
-  width: 100%;
+  width: 99vw;
 }
 
 .ar-container {
-width: 100%;
+width: 93vw;
   margin: 0 auto;
   padding-top: 150px;
 }
