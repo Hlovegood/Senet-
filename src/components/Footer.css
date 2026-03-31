@@ -1,0 +1,122 @@
+.footer-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* This ensures it takes up a full page after the carousel */
+    background: transparent;
+    overflow: hidden;
+}
+
+.footer-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Changed from 100vw to fix horizontal scroll */
+    height: 100%;
+    background-color: #1e1e1e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10000000;
+}
+
+.footer-inner {
+    width: 90%;
+    max-width: 1400px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+}
+
+/* TOP ROW */
+.footer-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-column h4 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-column p, .footer-column li {
+    font-size: 0.9rem;
+    color: #999;
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.footer-column .highlight {
+    color: #F0660C; /* Using your theme orange */
+}
+
+.footer-nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+/* MIDDLE ROW - THE LOGO */
+.footer-row-mid {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-big-logo {
+    width: 100%;
+    max-width: 1000px; /* Big enough to fill page width */
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Makes the logo white if it's black */
+    opacity: 0.9;
+}
+
+/* BOTTOM ROW */
+.footer-row-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social-icons img:hover {
+    transform: translateY(-5px);
+}
+
+.legal-info {
+    display: flex;
+    gap: 30px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.legal-info a {
+    color: #666;
+    text-decoration: none;
+}
+
+.legal-info a:hover {
+    color: white;
+}

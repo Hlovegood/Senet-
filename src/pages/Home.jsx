@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { supabase } from "../supabase";
 import Nav from "../components/Nav";
 import Carousel from "../components/Carousel";
+import Footer from "../components/Footer";
 import "./Home.css";
 
 // ASSETS - CORE
@@ -149,7 +150,7 @@ const Home = () => {
       label: "Egyptian Cuisine",
       name: "Egyptian Fattah",
       plateImg: FattahPlate, // Imported previously
-      lightColor: "#8B0000", // Dark Red
+      lightColor: "#8b7d00", // Dark Red
       darkColor: "#4A0000", // Deeper Red
       ingredients: [Tomato, Pyramids, Onion, Rice], // Array of PNGs
     },
@@ -159,7 +160,7 @@ const Home = () => {
       plateImg: SpaghettiPlate,
       lightColor: "#1e5d3b", // Light Italian Green
       darkColor: "#0a361f", // Dark Italian Green
-      ingredients: [Pisa, Onion, Tomato,],
+      ingredients: [Pisa, Onion, Tomato, Cheese],
     },
     {
       label: "Mexican Cuisine",
@@ -173,15 +174,15 @@ const Home = () => {
       label: "Spanish Cuisine",
       name: "PaellaPlate",
       plateImg: PaellaPlate,
-      lightColor: "#ce1126", // Light Mexican Red
-      darkColor: "#7e0a17", // Dark Mexican Red
+      lightColor: "#ce7c11", // Light Mexican Red
+      darkColor: "#aa8406", // Dark Mexican Red
       ingredients: [Shrimp, Clams, Onion, Church],
     },
         {
         label: "Japanese Cuisine",
         name: "Sushi",
         plateImg: SushiPlate,
-        lightColor: "#ce1126", // Light Mexican Red
+        lightColor: "#ce1169", // Light Mexican Red
         darkColor: "#7e0a17",  // Dark Mexican Red
         ingredients: [Rice, CherryBlossom, Onion, Salmon]
     }
@@ -264,7 +265,7 @@ const Home = () => {
           className="promo-video"
           initial={{ width: "80%", borderRadius: "20px" }}
           whileHover={{
-            width: "100vw",
+            width: "100%",
             height: "100vh",
             borderRadius: "0px",
             zIndex: 100,
@@ -281,9 +282,7 @@ const Home = () => {
           initial="hidden"
           animate={isBottomTrayNear ? "visible" : "hidden"}
         >
-          <img src={Seneya} className="tray-bg-img" alt="tray" />
           <div className="tray-content">
-            <h2 className="tray-title">Culinary Mastery</h2>
             <div className="features-grid">
               <motion.div className="feature-card" variants={itemVariants}>
                 <img src={FlavorsIcon} alt="" className="card-icon" />
@@ -418,10 +417,16 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section className="CuisineCarousel">
+
+        <h2>
+          Top 5 Cuisines
+        </h2>
         <CuisineCarousel slides={cuisineSlides} />
 
       </section>
+
+      <Footer/>
     </div>
   );
 };

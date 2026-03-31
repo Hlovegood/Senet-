@@ -394,115 +394,17 @@ Nav {
     width: 250px;
 }
 
-/* =========================================
-   IMMERSIVE CUISINE CAROUSEL
-========================================= */
-
-:root {
-    --flag-gradient: linear-gradient(135deg, #000000 0%, #FF0000 100%); /* Default */
-}
-
-.CuisineCarouselSection {
-    position: relative;
+    .CuisineCarousel{
     width: 100%;
-    padding: 100px 0;
-    overflow: hidden;
-    text-align: center;
-}
-
-.SectionTitle {
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 5px;
-}
-
-.SectionSubtitle {
-    color: #ccc;
-    font-size: 1rem;
-    margin-bottom: 60px;
-    opacity: 0.8;
-}
-
-/* The window that clips the sliding content */
-.carousel-view-window {
-    position: relative;
-    width: 1000px; /* Canvas width */
-    height: 700px;
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-}
-
-/* The central "canvas" holding the composition */
-.cuisine-composition-canvas {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    /* Framer Motion will update this background dynamically */
-    overflow: hidden;
-}
+    justify-content: center;
+    align-items: center;
+    }
 
-/* TEXT BLOCK */
-.cuisine-info-text {
-    position: relative;
-    z-index: 20;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.cuisine-info-text h3 {
-    margin: 0;
-    font-size: 1rem;
-    color: gold; /* Consistent highlight color */
-}
-
-.cuisine-info-text h1 {
-    margin: 5px 0 0 0;
-    font-size: 3rem;
-    font-family: 'Brigten', serif;
-    color: white;
-}
-
-/* THE PLATE */
-.central-plate-img {
-    width: 400px; /* Base size */
-    height: auto;
-    border-radius: 50%; /* Ensuring it's a plate */
-    object-fit: cover;
-    z-index: 10;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    cursor: pointer;
-}
-
-/* INGREDIENTS RING */
-.ingredients-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px; /* Width of the ring around the plate */
-    height: 600px;
-    z-index: 30;
-    pointer-events: none; /* User interacts with plate, not ingredients */
-}
-
-.ingredient {
-    position: absolute;
-    width: 64px; /* Default ingredient size */
-    height: auto;
-    object-fit: contain;
-    transform-origin: center center;
-}
-
-/* Position ingredients in a circular ring around the central plate (top, right, bottom, left) */
-.ing-1 { top: 10%; left: 50%; transform: translateX(-50%); } /* Top */
-.ing-2 { top: 50%; right: 10%; transform: translateY(-50%); } /* Right */
-.ing-3 { bottom: 10%; left: 50%; transform: translateX(-50%); } /* Bottom */
-.ing-4 { top: 50%; left: 10%; transform: translateY(-50%); } /* Left */
+    .CuisineCarousel h2{
+        color: white;
+        font-family: Poppins;
+        font-size: 32px;
+    }
+    

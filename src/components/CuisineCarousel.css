@@ -3,45 +3,32 @@
     padding: 80px 0;
     display: flex;
     justify-content: center;
-}
-
-.cuisine-window {
-    width: 90%;
-    max-width: 1100px;
-    height: 600px;
-    position: relative;
+    align-items: center;
+    background: transparent; /* Background removed as requested */
     overflow: hidden;
-    border-radius: 30px;
+    position: relative;
 }
 
-.cuisine-card {
+.cuisine-window-centered {
     width: 100%;
-    height: 100%;
+    max-width: 1400px;
+    height: 650px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plate-card {
+    width: 450px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-}
-
-.cuisine-text {
-    text-align: center;
-    z-index: 10;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.cuisine-label {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.cuisine-name {
-    font-family: 'Brigten', serif; /* Using your custom font */
-    font-size: 3.5rem;
-    margin-top: 5px;
+    border-radius: 40px;
+    /* The linear gradient remains on the card itself to highlight the dish */
 }
 
 .plate-wrapper {
@@ -49,23 +36,44 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
 }
 
+/* Plate styling - NO SHADOWS */
 .main-plate {
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     border-radius: 50%;
     z-index: 5;
+    box-shadow: none !important;
 }
 
 .floating-ingredient {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
     object-fit: contain;
-    z-index: 6;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
+    z-index: 20;
+}
+
+.cuisine-text {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cuisine-label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.cuisine-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-top: 5px;
 }

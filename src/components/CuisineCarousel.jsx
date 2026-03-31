@@ -5,7 +5,6 @@ import "./CuisineCarousel.css";
 const CuisineCarousel = ({ slides }) => {
   const [index, setIndex] = useState(0);
 
-  // Automatic transition every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
@@ -13,72 +12,80 @@ const CuisineCarousel = ({ slides }) => {
     return () => clearInterval(timer);
   }, [slides.length]);
 
-  const current = slides[index];
-
-  // Animation Variants
-  const containerVariants = {
-    initial: { opacity: 0, x: 50 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -50 }
-  };
-
   const ingredientVariants = {
-    hidden: { scale: 0, opacity: 0, y: 0 },
-    visible: (i) => ({
+    hidden: { scale: 0, opacity: 0 },
+    visible: (j) => ({
       scale: 1,
       opacity: 1,
-      y: i % 2 === 0 ? -120 : 120, // Alternates floating up/down
-      x: i < 2 ? -150 : 150,       // Alternates left/right
-      transition: { delay: 0.5 + i * 0.1, type: "spring", stiffness: 100 }
+      y: j % 2 === 0 ? -140 : 140,
+      x: j < 2 ? -170 : 170,
+      transition: { delay: 0.8, type: "spring", stiffness: 100 }
     })
   };
 
   return (
     <section className="cuisine-section">
-      <div className="cuisine-window">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            className="cuisine-card"
-            style={{ background: `linear-gradient(135deg, ${current.lightColor}, ${current.darkColor})` }}
-            variants={containerVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          >
-            {/* Text Overlay */}
-            <div className="cuisine-text">
-              <h3 className="cuisine-label">{current.label}</h3>
-              <h2 className="cuisine-name">{current.name}</h2>
-            </div>
+      <div className="cuisine-window-centered">
+        {slides.map((slide, i) => {
+          // Determine if slide is Previous, Active, or Next
+          const isActive = i === index;
+          const isPrev = i === (index - 1 + slides.length) % slides.length;
+          const isNext = i === (index + 1) % slides.length;
 
-            {/* Central Plate */}
-            <div className="plate-wrapper">
-              <motion.img 
-                src={current.plateImg} 
-                alt={current.name} 
-                className="main-plate"
-                initial={{ scale: 0.8, rotate: -20 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 1, type: "spring" }}
-              />
+          // If it's none of those, don't render it (keeps DOM clean)
+          if (!isActive && !isPrev && !isNext) return null;
 
-              {/* Floating Ingredients */}
-              {current.ingredients.map((ing, i) => (
-                <motion.img
-                  key={i}
-                  src={ing}
-                  custom={i}
-                  variants={ingredientVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="floating-ingredient"
-                />
-              ))}
-            </div>
-          </motion.div>
-        </AnimatePresence>
+          let xPos = 0;
+          if (isPrev) xPos = -450;
+          if (isNext) xPos = 450;
+
+          return (
+            <motion.div
+              key={i}
+              className="plate-card"
+              style={{ 
+                background: `linear-gradient(135deg, ${slide.lightColor}, ${slide.darkColor})`,
+                zIndex: isActive ? 10 : 5 
+              }}
+              animate={{ 
+                x: xPos, 
+                opacity: isActive ? 1 : 0.3, 
+                scale: isActive ? 1 : 0.7 
+              }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <div className="plate-wrapper">
+                <img src={slide.plateImg} alt={slide.name} className="main-plate" />
+
+                <AnimatePresence>
+                  {isActive && slide.ingredients.map((ing, j) => (
+                    <motion.img
+                      key={j}
+                      src={ing}
+                      custom={j}
+                      variants={ingredientVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit={{ scale: 0, opacity: 0 }}
+                      className="floating-ingredient"
+                    />
+                  ))}
+                </AnimatePresence>
+              </div>
+
+              {isActive && (
+                <motion.div 
+                  className="cuisine-text"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  <h3 className="cuisine-label">{slide.label}</h3>
+                  <h2 className="cuisine-name">{slide.name}</h2>
+                </motion.div>
+              )}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
