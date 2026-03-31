@@ -105,7 +105,7 @@
   z-index: 10; 
   
   /* 2. Background color (White or Black with low opacity) */
-  background: rgba(34, 34, 34, 0.514); 
+  background: rgba(34, 34, 34, 0.651); 
   
   /* 3. The Frosting (Backdrop filter is key) */
   backdrop-filter: blur(2px) saturate(150%);

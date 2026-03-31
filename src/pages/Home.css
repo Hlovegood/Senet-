@@ -268,12 +268,12 @@ Nav {
 }
 
 .feature-card h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 8px;
 }
 
 .feature-card p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     line-height: 1.3;
 }
 
@@ -309,6 +309,8 @@ Nav {
 /* Ensure consistent card styling */
 .feature-card {
     background: linear-gradient(180deg, #F0660C 0%, #a84504 100%);
+    justify-content: center;
+    align-items: center;
     flex: 1;
     max-width: 200px;
     padding: 25px 15px;
@@ -319,9 +321,75 @@ Nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 293px; /* Set a fixed height for all cards */
+    width: 298px;
+    font-size: 32px;
 }
+
+
 
 /* Add a smooth transition for the whole section background if needed */
 .home-wrapper {
     overflow-x: hidden;
+}
+
+.CommunitySection {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.community-text-container {
+    text-align: center;
+    margin-bottom: 120px; /* SPACE BETWEEN TEXT AND PICS */
+}
+
+.community-main-title {
+    font-family: 'Brigten', serif;
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.community-subtitle-text {
+    color: #ccc;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 30px;
+}
+
+.community-composition {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+}
+
+.connecting-lines-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.p {
+    position: absolute;
+    width: 200px;
+    border: 5px solid white;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+/* Corner Positions */
+.p-tl { top: 50px; left: 50px; }
+.p-tr { top: 50px; right: 50px; }
+.p-br { bottom: 50px; right: 50px; }
+.p-bl { bottom: 50px; left: 50px; }
+
+/* Center-Bottom Position Fix */
+.p-cb {
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
 }
