@@ -7,6 +7,7 @@ import { AboutPage } from './pages/About';
 import { ARTechnologyPage as ARTech } from './pages/ARTech';
 import {CareersPage} from './pages/Careers';
 import { FAQPage } from './pages/FAQPage';
+import { HowItWorksPage } from './pages/HowItWorks';
 
 const Routing = () => {
     return ( <>
@@ -19,6 +20,7 @@ const Routing = () => {
             <Route path='/ar-tech' element={<ARTech/>}/>
             <Route path='/careers' element={<CareersPage/>}/>
             <Route path='/faq' element={<FAQPage/>}/>
+            <Route path='/how-it-works' element={<HowItWorksPage/>}/>
 
 
 
