@@ -156,7 +156,7 @@ export function CareersPage() {
             </p>
             <div className="btn-group">
               <button className="btn-apply" style={{ background: 'white', color: '#00804D' }}>Send Your CV 📧</button>
-              <Link>
+              <Link to="/faq">
               <button className="btn-apply" style={{ background: 'rgba(255,255,255,0.2)', color: 'white' }}>Learn More 🌟</button>
               </Link>
             </div>

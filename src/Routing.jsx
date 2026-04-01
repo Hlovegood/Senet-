@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import PreLoader from './components/PreLoader';
 import { AboutPage } from './pages/About';
 import { ARTechnologyPage as ARTech } from './pages/ARTech';
-import {CareersPage} from './pages/Careers'
+import {CareersPage} from './pages/Careers';
+import { FAQPage } from './pages/FAQPage';
 
 const Routing = () => {
     return ( <>
@@ -17,6 +18,7 @@ const Routing = () => {
             <Route path='/about' element={<AboutPage/>}/>
             <Route path='/ar-tech' element={<ARTech/>}/>
             <Route path='/careers' element={<CareersPage/>}/>
+            <Route path='/faq' element={<FAQPage/>}/>
 
 
 
