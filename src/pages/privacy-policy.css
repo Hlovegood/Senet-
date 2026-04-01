@@ -1,0 +1,92 @@
+.policy-wrapper {
+  min-height: 100vh;
+  width: 99vw;
+  margin: 0 auto;
+  background: transparent !important;
+  padding: 140px 20px 100px 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.policy-container {
+  max-width: 900px;
+  width: 100%;
+}
+
+.policy-header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 10px;
+}
+
+.policy-meta {
+  display: flex;
+  gap: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.policy-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+.policy-card {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.section-title h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.icon-box {
+  background: rgba(240, 102, 12, 0.15);
+  color: #F0660C;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-content p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 50px; /* Aligns text with the title under the icon */
+}
+
+.contact-link {
+  color: #F0660C;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 10px;
+  transition: opacity 0.2s;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .section-content p {
+    padding-left: 0;
+  }
+}

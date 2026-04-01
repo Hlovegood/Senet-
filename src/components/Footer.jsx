@@ -88,7 +88,7 @@ const Footer = () => {
             
             <div className="legal-info">
               <span>© 2026 Senet. All rights reserved.</span>
-              <a href="#privacy">Privacy Policy</a>
+              <Link to= "/policy">Privacy Policy</Link>
               <a href="#terms">Terms of Service</a>
               <Link to= "/about">About</Link>
             </div>

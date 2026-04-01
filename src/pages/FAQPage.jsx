@@ -23,11 +23,11 @@ const faqData = [
     color: "orange-grad",
     questions: [
       {
-        q: "What is Senat and how does it work?",
+        q: "What is Senet and how does it work?",
         a: (
           <div className="flex flex-col gap-4">
             <p>
-              Senat is an innovative AR cooking companion app from Egypt! It combines a Pinterest-style recipe feed with augmented reality technology. Browse thousands of authentic Egyptian recipes, then use your phone's camera to see step-by-step AR instructions overlaid right in your kitchen.
+              Senet is an innovative AR cooking companion app from Egypt! It combines a Pinterest-style recipe feed with augmented reality technology. Browse thousands of authentic Egyptian recipes, then use your phone's camera to see step-by-step AR instructions overlaid right in your kitchen.
             </p>
             <Link 
               to="/how-it-works" 

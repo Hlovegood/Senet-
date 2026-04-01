@@ -11,6 +11,7 @@ import { HowItWorksPage } from './pages/HowItWorks';
 import {ContactPage} from './pages/ContactUs';
 import { CommunityPage } from './pages/Community';
 import { RecipeDiscoveryPage } from './pages/Feed';
+import PrivacyPolicy from './pages/Policy';
 
 const Routing = () => {
     return ( <>
@@ -27,6 +28,7 @@ const Routing = () => {
             <Route path='/contact-us' element={<ContactPage/>}/>
             <Route path='/community' element={<CommunityPage/>}/>
             <Route path='/feed' element={<RecipeDiscoveryPage/>}/>
+            <Route path='/policy' element={<PrivacyPolicy/>}/>
 
 
 
