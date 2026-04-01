@@ -19,6 +19,11 @@ const Nav = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
+    // Helper to close dropdown when a link is clicked
+    const handleLinkClick = () => {
+        setIsArOpen(false);
+    };
+
     return (
         <nav>
             <ul className='Nav-Cont'>
@@ -31,6 +36,7 @@ const Nav = () => {
                     <button 
                         className={`dropdown-trigger ${isArOpen ? 'active' : ''}`}
                         onClick={() => setIsArOpen(!isArOpen)}
+                        aria-expanded={isArOpen}
                     >
                         AR <span className="arrow"></span>
                     </button>
@@ -38,13 +44,19 @@ const Nav = () => {
                     {isArOpen && (
                         <ul className='dropdown-menu'>
                             <li>
-                                <Link to="/ar-calibration" onClick={() => setIsArOpen(false)}>
+                                <Link to="/ar-calibration" onClick={handleLinkClick}>
                                     AR Calibration
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/ar-tech" onClick={() => setIsArOpen(false)}>
+                                <Link to="/ar-tech" onClick={handleLinkClick}>
                                     Future of Cooking
+                                </Link>
+                            </li>
+                            {/* Added Accessibility Option */}
+                            <li>
+                                <Link to="/accessibility" onClick={handleLinkClick}>
+                                    Accessibility
                                 </Link>
                             </li>
                         </ul>
