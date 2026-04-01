@@ -9,6 +9,7 @@ import {CareersPage} from './pages/Careers';
 import { FAQPage } from './pages/FAQPage';
 import { HowItWorksPage } from './pages/HowItWorks';
 import {ContactPage} from './pages/ContactUs';
+import { CommunityPage } from './pages/Community';
 
 const Routing = () => {
     return ( <>
@@ -23,6 +24,7 @@ const Routing = () => {
             <Route path='/faq' element={<FAQPage/>}/>
             <Route path='/how-it-works' element={<HowItWorksPage/>}/>
             <Route path='/contact-us' element={<ContactPage/>}/>
+            <Route path='/community' element={<CommunityPage/>}/>
 
 
 

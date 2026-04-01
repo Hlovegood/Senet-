@@ -286,7 +286,7 @@ export function HowItWorksPage() {
               onClick={() =>
                 activeStep < 3
                   ? setActiveStep((prev) => prev + 1)
-                  : alert("Redirecting to Recipes...")
+                  : alert("Redirecting to Feed...")
               }
             >
               {activeStep === 3 ? "Start Cooking!" : "Next Step"}

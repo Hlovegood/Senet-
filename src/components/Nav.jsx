@@ -14,7 +14,7 @@ const Nav = () => {
         <li className='Nav-link'><Link to="/"><img src={Senet} alt="" /></Link></li>
         <li className='Nav-link'><Link to ="/ar-tech">AR</Link></li>
         <li className='Nav-link'><Link to ="/contact-us">Contact</Link></li>
-        <li className='Nav-link'><Link to="/Reviews-Page">Community</Link></li>
+        <li className='Nav-link'><Link to="/community">Community</Link></li>
         <li className='Nav-link'><Link to="/Feed-Page">Feed</Link></li>
         <li className='Nav-link'><Link to ="/careers">Careers</Link></li>
         <li className='Nav-link'><Link to ="/Profile-Page"><img src={Profile} alt="Profile" /></Link></li>
