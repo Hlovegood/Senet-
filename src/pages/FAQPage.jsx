@@ -12,7 +12,6 @@ import {
 // Assets
 import imgSombrero from "../assets/Ingredients/Sombrero.png";
 import imgChilli from "../assets/Ingredients/Chilli.png";
-import imgOnion from "../assets/Ingredients/Onion.png";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "./FAQPage.css";
@@ -315,34 +314,8 @@ export function FAQPage() {
               marginTop: "40px",
             }}
           >
-            <div
-              className="benefit-card green-grad"
-              style={{
-                padding: "30px",
-                borderRadius: "25px",
-                textAlign: "center",
-              }}
-            >
-              <PlayCircle size={40} style={{ marginBottom: "10px" }} />
-              <h4>Video Tutorials</h4>
-              <p style={{ fontSize: "0.9rem", opacity: 0.8 }}>
-                Watch our AR quick-start guides.
-              </p>
-            </div>
-            <div
-              className="benefit-card green-grad"
-              style={{
-                padding: "30px",
-                borderRadius: "25px",
-                textAlign: "center",
-              }}
-            >
-              <MessageCircle size={40} style={{ marginBottom: "10px" }} />
-              <h4>Community Forum</h4>
-              <p style={{ fontSize: "0.9rem", opacity: 0.8 }}>
-                Connect with other Egyptian food lovers.
-              </p>
-            </div>
+          
+           
           </div>
         </div>
       </div>
