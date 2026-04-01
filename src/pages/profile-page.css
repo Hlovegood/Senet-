@@ -1,0 +1,162 @@
+/* Reusing the established system colors and layout */
+.discovery-wrapper {
+  min-height: 100vh;
+  width: 99vw;
+  margin: 0 auto;
+  background: transparent;
+  color: white;
+}
+
+.discovery-layout {
+  display: flex;
+  gap: 40px;
+  padding: 140px 40px 100px 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* SIDEBAR PROFILE STYLING */
+.profile-mini-card {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 20px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #F0660C;
+}
+
+.level-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #00804D;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+.sidebar-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.05);
+  padding: 12px;
+  border-radius: 15px;
+}
+
+.stat-item span { font-weight: bold; font-size: 1rem; }
+.stat-item p { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin: 0; }
+
+.achievement-box {
+  margin-top: 30px;
+}
+
+.badge-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.2);
+}
+
+.badge-row .unlocked { color: #F0660C; }
+
+/* GRID & CONTENT */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.view-all {
+  background: transparent;
+  border: none;
+  color: #F0660C;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.green-badge { background: #00804D !important; }
+.orange-badge { background: #F0660C !important; }
+
+.heart-filled { fill: #ef4444; color: #ef4444; }
+
+.recipe-title-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.profile-card-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: none;
+    font-family: Poppins;
+    color: white;
+}
+
+/* RECOMMENDATION BANNER */
+.recommendation-banner {
+    margin-top: 50px;
+    background: rgba(240, 102, 12, 0.1);
+    border: 1px dashed #F0660C;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banner-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.banner-info h4 { margin: 0; font-size: 1.2rem; }
+.banner-info p { margin: 5px 0 0; color: rgba(255,255,255,0.6); }
+
+.banner-btn {
+    background: #F0660C;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .discovery-layout { flex-direction: column; }
+  .filter-sidebar { width: 100%; position: relative; top: 0; }
+  .recommendation-banner { flex-direction: column; gap: 20px; text-align: center; }
+}

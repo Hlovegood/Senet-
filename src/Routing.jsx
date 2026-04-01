@@ -12,6 +12,7 @@ import {ContactPage} from './pages/ContactUs';
 import { CommunityPage } from './pages/Community';
 import { RecipeDiscoveryPage } from './pages/Feed';
 import PrivacyPolicy from './pages/Policy';
+import ProfilePage from './pages/Profile';
 
 const Routing = () => {
     return ( <>
@@ -29,6 +30,7 @@ const Routing = () => {
             <Route path='/community' element={<CommunityPage/>}/>
             <Route path='/feed' element={<RecipeDiscoveryPage/>}/>
             <Route path='/policy' element={<PrivacyPolicy/>}/>
+            <Route path='/profile' element={<ProfilePage/>}/>
 
 
 
