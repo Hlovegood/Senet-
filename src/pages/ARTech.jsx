@@ -51,7 +51,7 @@ export function ARTechnologyPage() {
           >
             <Zap size={18} /> <span>Future of Cooking</span>
           </motion.div>
-          <h1 className="Brigten">The Magic Behind Senat</h1>
+          <h1 className="Brigten">The Magic Behind Senet</h1>
           <p className="ar-subtitle">
             Blending Augmented Reality and AI to revolutionize your kitchen experience.
           </p>

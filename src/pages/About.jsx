@@ -90,7 +90,7 @@ export function AboutPage() {
 
         {/* Bottom CTA */}
         <section className="cta-section green-grad">
-          <h2>Download the Senat App Today</h2>
+          <h2>Download the Senet App Today</h2>
           <p>Start your culinary journey with thousands of recipes at your fingertips.</p>
           <div className="btn-group">
             <button className="btn-white">App Store</button>

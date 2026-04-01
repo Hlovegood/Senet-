@@ -16,7 +16,7 @@ const Nav = () => {
         <li className='Nav-link'><Link to ="/Contact">Contact</Link></li>
         <li className='Nav-link'><Link to="/Reviews-Page">Community</Link></li>
         <li className='Nav-link'><Link to="/Feed-Page">Feed</Link></li>
-        <li className='Nav-link'><Link to ="/Careers-Page">Careers</Link></li>
+        <li className='Nav-link'><Link to ="/careers">Careers</Link></li>
         <li className='Nav-link'><Link to ="/Profile-Page"><img src={Profile} alt="Profile" /></Link></li>
     </ul>
     </nav>
