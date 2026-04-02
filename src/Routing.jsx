@@ -15,6 +15,7 @@ import PrivacyPolicy from './pages/Policy';
 import ProfilePage from './pages/Profile';
 import ARCalibrationPage from './pages/ARCali';
 import AccessibilityPage from './pages/Access';
+import Partner from './pages/Partner';
 
 const Routing = () => {
     return ( <>
@@ -35,6 +36,7 @@ const Routing = () => {
             <Route path='/profile' element={<ProfilePage/>}/>
             <Route path='/ar-calibration' element={<ARCalibrationPage/>}/>
             <Route path='/accessibility' element={<AccessibilityPage/>}/>
+            <Route path='/partner-with-us' element={<Partner/>}/>
 
 
 

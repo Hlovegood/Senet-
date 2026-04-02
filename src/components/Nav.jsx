@@ -6,22 +6,28 @@ import Senet from '../assets/Icons/Senet-Icon.png'
 
 const Nav = () => {
     const [isArOpen, setIsArOpen] = useState(false);
-    const dropdownRef = useRef(null);
+    const [isCommOpen, setIsCommOpen] = useState(false);
+    
+    const arDropdownRef = useRef(null);
+    const commDropdownRef = useRef(null);
 
-    // Close dropdown when clicking outside
+    // Close dropdowns when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (arDropdownRef.current && !arDropdownRef.current.contains(event.target)) {
                 setIsArOpen(false);
+            }
+            if (commDropdownRef.current && !commDropdownRef.current.contains(event.target)) {
+                setIsCommOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
-    // Helper to close dropdown when a link is clicked
     const handleLinkClick = () => {
         setIsArOpen(false);
+        setIsCommOpen(false);
     };
 
     return (
@@ -32,39 +38,53 @@ const Nav = () => {
                 </li>
                 
                 {/* AR Dropdown Menu */}
-                <li className='Nav-link dropdown' ref={dropdownRef}>
+                <li className='Nav-link dropdown' ref={arDropdownRef}>
                     <button 
                         className={`dropdown-trigger ${isArOpen ? 'active' : ''}`}
-                        onClick={() => setIsArOpen(!isArOpen)}
-                        aria-expanded={isArOpen}
+                        onClick={() => {
+                            setIsArOpen(!isArOpen);
+                            setIsCommOpen(false); // Close other dropdown
+                        }}
                     >
                         AR <span className="arrow"></span>
                     </button>
                     
                     {isArOpen && (
                         <ul className='dropdown-menu'>
+                            <li><Link to="/ar-calibration" onClick={handleLinkClick}>AR Calibration</Link></li>
+                            <li><Link to="/ar-tech" onClick={handleLinkClick}>Future of Cooking</Link></li>
+                            <li><Link to="/accessibility" onClick={handleLinkClick}>Accessibility</Link></li>
+                        </ul>
+                    )}
+                </li>
+
+                <li className='Nav-link'><Link to="/contact-us">Contact</Link></li>
+
+                {/* Community Dropdown Menu */}
+                <li className='Nav-link dropdown' ref={commDropdownRef}>
+                    <button 
+                        className={`dropdown-trigger ${isCommOpen ? 'active' : ''}`}
+                        onClick={() => {
+                            setIsCommOpen(!isCommOpen);
+                            setIsArOpen(false); // Close other dropdown
+                        }}
+                    >
+                        Community <span className="arrow"></span>
+                    </button>
+                    
+                    {isCommOpen && (
+                        <ul className='dropdown-menu'>
+                            <li><Link to="/community" onClick={handleLinkClick}>Community Feed</Link></li>
+                            <li><Link to="/pantry" onClick={handleLinkClick}>Pantry</Link></li>
                             <li>
-                                <Link to="/ar-calibration" onClick={handleLinkClick}>
-                                    AR Calibration
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/ar-tech" onClick={handleLinkClick}>
-                                    Future of Cooking
-                                </Link>
-                            </li>
-                            {/* Added Accessibility Option */}
-                            <li>
-                                <Link to="/accessibility" onClick={handleLinkClick}>
-                                    Accessibility
+                                <Link to="/partner-with-us" onClick={handleLinkClick}>
+                                    Partner with Us
                                 </Link>
                             </li>
                         </ul>
                     )}
                 </li>
 
-                <li className='Nav-link'><Link to="/contact-us">Contact</Link></li>
-                <li className='Nav-link'><Link to="/community">Community</Link></li>
                 <li className='Nav-link'><Link to="/feed">Feed</Link></li>
                 <li className='Nav-link'><Link to="/careers">Careers</Link></li>
                 <li className='Nav-link'>
