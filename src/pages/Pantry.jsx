@@ -50,27 +50,54 @@ export default function SmartKitchenPage() {
         </section>
 
         {/* Recipe Summary Card */}
-        <section className="glass-card-main recipe-summary mb-12">
-          <div className="recipe-flex">
-            <img src={selectedRecipe.image} alt={selectedRecipe.name} className="recipe-img-large" />
-            <div className="recipe-details">
-              <h2>{selectedRecipe.name}</h2>
-              <div className="recipe-meta">
-                <span><Clock size={18} /> {selectedRecipe.prepTime}</span>
-                <span><Users size={18} /> {selectedRecipe.servings} Servings</span>
-              </div>
-              <div className="progress-container">
-                <div className="progress-label">
-                  <span>Pantry Readiness</span>
-                  <span>{completionPercentage}%</span>
-                </div>
-                <div className="progress-bar-bg">
-                  <div className="progress-bar-fill" style={{ width: `${completionPercentage}%` }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       {/* Recipe Card */}
+<section className="glass-card-main recipe-summary mb-12">
+  <div className="recipe-flex">
+    {/* Image Side */}
+    <div className="recipe-image-wrapper">
+      <img 
+        src={selectedRecipe.image} 
+        alt={selectedRecipe.name} 
+        className="recipe-img-large" 
+      />
+    </div>
+
+    {/* Content Side - This will now fill the rest of the card */}
+    <div className="recipe-details">
+      <div className="recipe-header-info">
+        <h2 className="kitchen-title" style={{ fontSize: '3rem', textAlign: 'left' }}>
+          {selectedRecipe.name}
+        </h2>
+        <div className="recipe-meta" style={{ justifyContent: 'flex-start' }}>
+          <span className="flex items-center gap-2"><Clock size={20} /> {selectedRecipe.prepTime}</span>
+          <span className="flex items-center gap-2"><Package size={20} /> {selectedRecipe.servings} Servings</span>
+        </div>
+      </div>
+
+      <div className="progress-container">
+        <div className="progress-label" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+          <span className="font-bold">Pantry Readiness</span>
+          <span className="text-orange-500 font-black">{completionPercentage}%</span>
+        </div>
+        <div className="progress-bar-bg">
+          <div 
+            className="progress-bar-fill" 
+            style={{ 
+              width: `${completionPercentage}%`,
+              height: '100%',
+              background: 'linear-gradient(90deg, #F0660C, #FF8E42)',
+              transition: 'width 1s ease-in-out'
+            }}
+          ></div>
+        </div>
+        <div className="flex gap-6 mt-4 opacity-70 text-sm">
+          <span>{enoughCount} Ready</span>
+          <span>{ingredients.length - enoughCount} To Buy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Action Grid */}
         <div className="feature-grid-3 mb-20">

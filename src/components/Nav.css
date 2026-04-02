@@ -127,3 +127,108 @@ li{
     from { opacity: 0; transform: translateX(-50%) translateY(10px); }
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
+
+/* --- Active Page Highlight --- */
+
+/* Highlight for main Nav links and Dropdown links */
+.Nav-Link.active, 
+.dropdown-menu a.active,
+a.active {
+    color: #F0660C !important;
+    font-weight: 700;
+    /* Optional: add a small underline for the main nav links */
+    border-bottom: 2px solid #F0660C;
+}
+
+/* Ensure dropdown triggers also highlight if a sub-item is active */
+.dropdown-trigger.active {
+    color: #F0660C !important;
+}
+
+/* Remove underline from dropdown menu links specifically */
+.dropdown-menu a.active {
+    border-bottom: none;
+    background: rgba(240, 102, 12, 0.1);
+}
+
+/* --- Desktop: KEEP ORIGINAL STYLING --- */
+.Nav-Cont {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: nowrap; /* Desktop stays in one line */
+    padding: 12px 24px;
+    border-radius: 50px; /* Pill shape */
+    width: auto;
+    background: rgba(66, 66, 66, 0.555); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 20px;
+}
+
+.Nav-Menu-List {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.burger-menu {
+    display: none; /* Hidden on desktop */
+}
+
+/* --- Mobile: RESPONSIVE BURGER MODE --- */
+@media (max-width: 850px) {
+    .Nav-Cont {
+        display: flex;
+        flex-direction: row; /* Logo and Burger in one slim row */
+        justify-content: space-between;
+        width: 90vw;
+        padding: 10px 20px;
+        border-radius: 50px;
+    }
+
+    .burger-menu {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .Nav-Menu-List {
+        display: none; /* Hide links on mobile initially */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Appear below the pill */
+        left: 0;
+        right: 0;
+        background: rgba(40, 40, 40, 0.98); /* Separate background for links */
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        z-index: 999;
+    }
+
+    .Nav-Menu-List.mobile-open {
+        display: flex; /* Show when burger is clicked */
+    }
+
+    .Nav-link {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .dropdown-menu {
+        position: static; /* Dropdowns push content down on mobile */
+        transform: none;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+    }
+}
