@@ -16,6 +16,7 @@ import ProfilePage from './pages/Profile';
 import ARCalibrationPage from './pages/ARCali';
 import AccessibilityPage from './pages/Access';
 import Partner from './pages/Partner';
+import Pantry from './pages/Pantry';
 
 const Routing = () => {
     return ( <>
@@ -37,6 +38,7 @@ const Routing = () => {
             <Route path='/ar-calibration' element={<ARCalibrationPage/>}/>
             <Route path='/accessibility' element={<AccessibilityPage/>}/>
             <Route path='/partner-with-us' element={<Partner/>}/>
+            <Route path='/pantry' element={<Pantry/>}/>
 
 
 
