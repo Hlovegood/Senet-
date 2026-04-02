@@ -110,3 +110,99 @@
 .t-10 { top: 10%; } .l-10 { left: 10%; }
 .t-40 { top: 40%; } .r-20 { right: 10%; }
 .b-20 { bottom: 20%; } .l-32 { left: 15%; }
+
+/* --- ABOUT PAGE RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 1024px) {
+    .about-container {
+        padding-top: 100px; /* Bring header closer to top on mobile */
+    }
+
+    .about-header h1 {
+        padding: 0 20px;
+    }
+
+    .subtitle {
+        width: 90%;
+        margin-bottom: 40px;
+    }
+
+    /* 1. STACK THE STORY GRID (2 columns to 1) */
+    .about-grid {
+        grid-template-columns: 1fr; /* Switch to column */
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .story-card {
+        padding: 30px;
+        text-align: center;
+        border-radius: 30px;
+        order: 2; /* Ensures text is always relative to image */
+    }
+
+    .image-holder {
+        order: 1; /* Keeps image on top for better mobile flow */
+    }
+
+    .image-holder img {
+        height: 300px; /* Reduce image height for phones */
+        border-radius: 30px;
+    }
+
+    .rot-left {
+        transform: rotate(0deg); /* Remove rotation on mobile for cleaner layout */
+    }
+
+    /* 2. STACK THE FEATURES (3 columns to 1) */
+    .features-row {
+        grid-template-columns: 1fr; /* Switch to column */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .feature-box {
+        padding: 30px;
+    }
+
+    /* 3. CTA SECTION ADJUSTMENTS */
+    .cta-section {
+        padding: 40px 20px;
+        margin: 0 20px;
+        border-radius: 30px;
+    }
+
+    .btn-group {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-white {
+        width: 80%; /* Wider buttons for easier tapping */
+    }
+
+    /* 4. HIDE DECO ICONS ON MOBILE (Prevents weird overlapping) */
+    .deco-icon {
+        display: none;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .about-header h1 {
+        font-size: 2.8rem;
+    }
+
+    .story-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .story-card p {
+        font-size: 1rem;
+    }
+
+    .image-holder img {
+        height: 250px;
+    }
+}

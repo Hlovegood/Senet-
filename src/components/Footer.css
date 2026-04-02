@@ -119,3 +119,71 @@
 .legal-info a:hover {
     color: white;
 }
+
+/* --- FOOTER RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 1024px) {
+    .footer-wrapper {
+        height: auto; /* Remove the fixed full-screen height */
+        min-height: 100vh;
+        }
+
+    .footer-panel {
+        position: relative; /* Allow the panel to grow with content */
+        padding: 20px;
+    }
+
+    .footer-inner {
+        height: auto;
+        gap: 40px;
+    }
+
+    /* Stack Top Row Columns */
+    .footer-row-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* Stack the Nav Links vertically or in a tighter grid */
+    .footer-nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Scale the Big Logo for mobile */
+    .footer-big-logo {
+        max-width: 80%;
+        margin: 20px 0;
+    }
+
+    /* Stack Bottom Row (Socials and Legal) */
+    .footer-row-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        border-top: 1px solid #333;
+        padding-top: 30px;
+    }
+
+    .legal-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+    .footer-column h4 {
+        font-size: 1.2rem;
+    }
+    
+    .footer-column p, .footer-column li {
+        font-size: 1rem;
+    }
+
+    .footer-big-logo {
+        max-width: 95%;
+    }
+}
