@@ -125,3 +125,107 @@ width: 93vw;
 .deco-icon { position: absolute; width: 80px; opacity: 0.3; pointer-events: none; }
 .t-10 { top: 10%; } .l-5 { left: 5%; }
 .t-30 { top: 30%; } .r-10 { right: 5%; }
+
+/* --- AR TECH PAGE RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 1024px) {
+    .ar-container {
+        width: 90vw; /* Slightly tighter margins for tablets */
+        padding-top: 100px;
+    }
+
+    /* 1. TABS: Allow buttons to wrap if they don't fit in one row */
+    .mode-tabs {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+        flex: 1 1 140px; /* Allows buttons to grow and fill space */
+        justify-content: center;
+    }
+
+    /* 2. MODE CARD: Stack Image and Content */
+    .mode-card {
+        grid-template-columns: 1fr; /* Switch to column */
+        padding: 30px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .features-list {
+        display: inline-block; /* Center-align the list content */
+        text-align: left;
+    }
+
+    .mode-image img {
+        height: 300px; /* Smaller image height for mobile */
+    }
+
+    .fps-counter {
+        right: 10px; /* Keep it from clipping off-screen */
+        bottom: 10px;
+        font-size: 0.8rem;
+    }
+
+    /* 3. SPECS GRID: 3 columns to 1 */
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .spec-card {
+        padding: 30px;
+    }
+
+    /* 4. ARCHITECTURE SECTION: 2 columns to 1 */
+    .arch-section {
+        padding: 30px 20px;
+    }
+
+    .arch-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .arch-column {
+        text-align: center; /* Center text for better mobile balance */
+    }
+
+    .arch-column ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    /* 5. HIDE DECO ICONS */
+    .deco-icon {
+        display: none;
+    }
+}
+
+/* Extra small screens adjustments */
+@media (max-width: 480px) {
+    .ar-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+
+    .mode-card {
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .mode-image img {
+        height: 220px;
+    }
+
+    .spec-card h3 {
+        font-size: 1.5rem;
+    }
+}
