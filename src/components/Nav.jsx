@@ -38,10 +38,10 @@ const Nav = () => {
       acc: "سهولة الوصول",
       contact: "اتصل بنا",
       comm: "المجتمع",
-      feed: "آخر الأخبار",
+      feed: "محتوى المجتمع",
       pantry: "المخزن",
       partner: "شريك معنا",
-      mainFeed: "الخلاصة",
+      mainFeed: "المحتوى",
       careers: "وظائف"
     }
   };
