@@ -8,6 +8,7 @@ import {
   Coins,
   ThermometerSnowflake,
 } from "lucide-react";
+import { useLanguage } from "../LanguageContext";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import "./recipe-discovery.css";
@@ -16,6 +17,7 @@ const recipesData = [
   {
     id: 1,
     title: "Egyptian Koshari",
+    titleAr: "كشري مصري",
     category: "Traditional",
     size: "card-tall",
     cost: "Low",
@@ -31,6 +33,7 @@ const recipesData = [
   {
     id: 2,
     title: "Baklava Jewels",
+    titleAr: "جواهر البقلاوة",
     category: "Traditional",
     size: "card-medium",
     cost: "Medium",
@@ -46,6 +49,7 @@ const recipesData = [
   {
     id: 3,
     title: "Protein Falafel",
+    titleAr: "فلافل غنية بالبروتين",
     category: "High Protein",
     size: "card-short",
     cost: "Low",
@@ -61,6 +65,7 @@ const recipesData = [
   {
     id: 4,
     title: "Lentil Power Soup",
+    titleAr: "شوربة العدس المغذية",
     category: "Vegan",
     size: "card-medium",
     cost: "Low",
@@ -76,6 +81,7 @@ const recipesData = [
   {
     id: 5,
     title: "Grilled Za'atar Chicken",
+    titleAr: "دجاج مشوي بالزعتر",
     category: "High Protein",
     size: "card-tall",
     cost: "High",
@@ -91,6 +97,7 @@ const recipesData = [
   {
     id: 6,
     title: "Mango Mahalabia",
+    titleAr: "مهلبية بالمانجو",
     category: "Quick Meals",
     size: "card-short",
     cost: "Medium",
@@ -106,6 +113,7 @@ const recipesData = [
   {
     id: 7,
     title: "Stuffed Vine Leaves",
+    titleAr: "ورق عنب محشي",
     category: "Traditional",
     size: "card-tall",
     cost: "Medium",
@@ -121,6 +129,7 @@ const recipesData = [
   {
     id: 8,
     title: "Spicy Shawarma Wrap",
+    titleAr: "لفائف شاورما حارة",
     category: "Quick Meals",
     size: "card-medium",
     cost: "Medium",
@@ -136,6 +145,7 @@ const recipesData = [
   {
     id: 9,
     title: "Berry Quinoa Bowl",
+    titleAr: "وعاء الكينوا بالتوت",
     category: "Vegan",
     size: "card-short",
     cost: "High",
@@ -151,6 +161,7 @@ const recipesData = [
   {
     id: 10,
     title: "Beef Hawawshi",
+    titleAr: "حواوشي لحم",
     category: "Traditional",
     size: "card-tall",
     cost: "Medium",
@@ -166,6 +177,7 @@ const recipesData = [
   {
     id: 11,
     title: "Tashila Salad",
+    titleAr: "سلطة تشيلة",
     category: "Quick Meals",
     size: "card-medium",
     cost: "Low",
@@ -181,6 +193,7 @@ const recipesData = [
   {
     id: 12,
     title: "Pistachio Kunafa",
+    titleAr: "كنافة بالفستق",
     category: "Traditional",
     size: "card-short",
     cost: "High",
@@ -196,6 +209,7 @@ const recipesData = [
   {
     id: 13,
     title: "Ful Medames Pot",
+    titleAr: "قدر فول مدمس",
     category: "Traditional",
     size: "card-tall",
     cost: "Low",
@@ -211,6 +225,7 @@ const recipesData = [
   {
     id: 14,
     title: "Garlic Hummus Trio",
+    titleAr: "ثلاثية حمص بالثوم",
     category: "Vegan",
     size: "card-short",
     cost: "Low",
@@ -226,6 +241,7 @@ const recipesData = [
   {
     id: 15,
     title: "Shish Tawook",
+    titleAr: "شيش طاووق",
     category: "High Protein",
     size: "card-medium",
     cost: "Medium",
@@ -236,12 +252,12 @@ const recipesData = [
     meal: "Dinner",
     difficulty: "Medium",
     protein: 38,
-    image:
-      "https://pub-aaa82e9851064d22b954c3ebbafc9ae6.r2.dev/legacy/webp/shish-kebab-on-a-skewer-with-vegetables-HUdbA2FbBwOy6QRXWcYcQ.webp",
+    image: "https://pub-aaa82e9851064d22b954c3ebbafc9ae6.r2.dev/legacy/webp/shish-kebab-on-a-skewer-with-vegetables-HUdbA2FbBwOy6QRXWcYcQ.webp",
   },
   {
     id: 16,
     title: "Om Ali Pudding",
+    titleAr: "أم علي",
     category: "Traditional",
     size: "card-tall",
     cost: "Medium",
@@ -257,6 +273,7 @@ const recipesData = [
 ];
 
 export function RecipeDiscoveryPage() {
+  const { lang } = useLanguage();
   const [activeTab, setActiveTab] = useState("All Recipes");
   const [filters, setFilters] = useState({
     cost: "All",
@@ -267,29 +284,63 @@ export function RecipeDiscoveryPage() {
     meal: "All",
   });
 
+  const translations = {
+    en: {
+      filterTitle: "Filters",
+      resetBtn: "Reset All",
+      viewBtn: "VIEW RECIPE",
+      categories: ["All Recipes", "Quick Meals", "Vegan", "High Protein", "Traditional"],
+      filterGroups: [
+        { label: "Cost Range", name: "cost", options: ["Low", "Medium", "High"], placeholder: "Any Price" },
+        { label: "Flavor Profile", name: "flavor", options: ["Savory", "Sweet"], placeholder: "All Flavors" },
+        { label: "Temperature", name: "temp", options: ["Hot", "Cold"], placeholder: "Any Temp" },
+        { label: "Difficulty", name: "difficulty", options: ["Easy", "Medium", "Hard"], placeholder: "All Levels" },
+        { label: "Cuisine", name: "cuisine", options: ["Egyptian", "Middle Eastern", "Mediterranean"], placeholder: "Global" },
+      ],
+      dataMap: {
+        Hot: "Hot", Cold: "Cold", Low: "Low", Medium: "Medium", High: "High",
+        Egyptian: "Egyptian", "Middle Eastern": "Middle Eastern", Mediterranean: "Mediterranean", Levantine: "Levantine", Fusion: "Fusion"
+      }
+    },
+    ar: {
+      filterTitle: "الفلاتر",
+      resetBtn: "إعادة تعيين",
+      viewBtn: "عرض الوصفة",
+      categories: ["كل الوصفات", "وجبات سريعة", "نباتي", "بروتين عالٍ", "تقليدي"],
+      filterGroups: [
+        { label: "نطاق التكلفة", name: "cost", options: ["Low", "Medium", "High"], placeholder: "أي سعر" },
+        { label: "نوع النكهة", name: "flavor", options: ["Savory", "Sweet"], placeholder: "كل النكهات" },
+        { label: "الحرارة", name: "temp", options: ["Hot", "Cold"], placeholder: "أي حرارة" },
+        { label: "الصعوبة", name: "difficulty", options: ["Easy", "Medium", "Hard"], placeholder: "كل المستويات" },
+        { label: "المطبخ", name: "cuisine", options: ["Egyptian", "Middle Eastern", "Mediterranean"], placeholder: "عالمي" },
+      ],
+      dataMap: {
+        Hot: "ساخن", Cold: "بارد", Low: "منخفض", Medium: "متوسط", High: "مرتفع",
+        Egyptian: "مصري", "Middle Eastern": "شرق أوسطي", Mediterranean: "متوسطي", Levantine: "شامي", Fusion: "فيوجن",
+        Savory: "مالح", Sweet: "حلو", Easy: "سهل", Hard: "صعب"
+      }
+    }
+  };
+
+  const t = translations[lang];
+
   const filteredRecipes = useMemo(() => {
     return recipesData.filter((r) => {
-      const matchTab = activeTab === "All Recipes" || r.category === activeTab;
+      const englishCategory = lang === 'en' 
+        ? activeTab 
+        : translations.en.categories[translations.ar.categories.indexOf(activeTab)];
+
+      const matchTab = activeTab === (lang === 'en' ? "All Recipes" : "كل الوصفات") || r.category === englishCategory;
       const matchCost = filters.cost === "All" || r.cost === filters.cost;
-      const matchFlavor =
-        filters.flavor === "All" || r.flavor === filters.flavor;
+      const matchFlavor = filters.flavor === "All" || r.flavor === filters.flavor;
       const matchTemp = filters.temp === "All" || r.temp === filters.temp;
-      const matchDiff =
-        filters.difficulty === "All" || r.difficulty === filters.difficulty;
-      const matchCuisine =
-        filters.cuisine === "All" || r.cuisine === filters.cuisine;
+      const matchDiff = filters.difficulty === "All" || r.difficulty === filters.difficulty;
+      const matchCuisine = filters.cuisine === "All" || r.cuisine === filters.cuisine;
       const matchMeal = filters.meal === "All" || r.meal === filters.meal;
-      return (
-        matchTab &&
-        matchCost &&
-        matchFlavor &&
-        matchTemp &&
-        matchDiff &&
-        matchCuisine &&
-        matchMeal
-      );
+      
+      return matchTab && matchCost && matchFlavor && matchTemp && matchDiff && matchCuisine && matchMeal;
     });
-  }, [activeTab, filters]);
+  }, [activeTab, filters, lang]);
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -302,64 +353,15 @@ export function RecipeDiscoveryPage() {
       <Nav />
       <div className="discovery-wrapper">
         <div className="discovery-layout">
-          {/* LEFT SIDEBAR */}
           <aside className="filter-sidebar">
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                marginBottom: "30px",
-              }}
-            >
+            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "30px" }}>
               <Filter size={20} color="#F0660C" />
-              <h3
-                style={{
-                  fontSize: "1.2rem",
-                  fontWeight: "bold",
-                  color: "white",
-                }}
-              >
-                Filters
-              </h3>
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", color: "white" }}>{t.filterTitle}</h3>
             </div>
 
-            {[
-              {
-                label: "Cost Range",
-                name: "cost",
-                options: ["Low", "Medium", "High"],
-                placeholder: "Any Price",
-              },
-              {
-                label: "Flavor Profile",
-                name: "flavor",
-                options: ["Savory", "Sweet"],
-                placeholder: "All Flavors",
-              },
-              {
-                label: "Temperature",
-                name: "temp",
-                options: ["Hot", "Cold"],
-                placeholder: "Any Temp",
-              },
-              {
-                label: "Difficulty",
-                name: "difficulty",
-                options: ["Easy", "Medium", "Hard"],
-                placeholder: "All Levels",
-              },
-              {
-                label: "Cuisine",
-                name: "cuisine",
-                options: ["Egyptian", "Middle Eastern", "Mediterranean"],
-                placeholder: "Global",
-              },
-            ].map((f) => (
+            {t.filterGroups.map((f) => (
               <div className="filter-group" key={f.name}>
-                <h4 className={isFilterActive(f.name) ? "has-value" : ""}>
-                  {f.label}
-                </h4>
+                <h4 className={isFilterActive(f.name) ? "has-value" : ""}>{f.label}</h4>
                 <select
                   name={f.name}
                   className={`filter-select ${isFilterActive(f.name) ? "has-value" : ""}`}
@@ -368,51 +370,24 @@ export function RecipeDiscoveryPage() {
                 >
                   <option value="All">{f.placeholder}</option>
                   {f.options.map((opt) => (
-                    <option key={opt} value={opt}>
-                      {opt}
-                    </option>
+                    <option key={opt} value={opt}>{t.dataMap[opt] || opt}</option>
                   ))}
                 </select>
               </div>
             ))}
 
             <button
-              onClick={() =>
-                setFilters({
-                  cost: "All",
-                  flavor: "All",
-                  temp: "All",
-                  difficulty: "All",
-                  cuisine: "All",
-                  meal: "All",
-                })
-              }
+              onClick={() => setFilters({ cost: "All", flavor: "All", temp: "All", difficulty: "All", cuisine: "All", meal: "All" })}
               className="reset-btn"
-              style={{
-                width: "100%",
-                padding: "12px",
-                borderRadius: "12px",
-                background: "rgba(255,255,255,0.1)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "white",
-                marginTop: "10px",
-                cursor: "pointer",
-              }}
+              style={{ width: "100%", padding: "12px", borderRadius: "12px", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "white", marginTop: "10px", cursor: "pointer" }}
             >
-              Reset All
+              {t.resetBtn}
             </button>
           </aside>
 
-          {/* MAIN CONTENT */}
           <main className="main-content">
             <div className="category-bar">
-              {[
-                "All Recipes",
-                "Quick Meals",
-                "Vegan",
-                "High Protein",
-                "Traditional",
-              ].map((name) => (
+              {t.categories.map((name) => (
                 <button
                   key={name}
                   onClick={() => setActiveTab(name)}
@@ -435,84 +410,35 @@ export function RecipeDiscoveryPage() {
                     className={`recipe-card ${recipe.size}`}
                   >
                     <div className="image-container">
-                      <img
-                        src={recipe.image}
-                        alt={recipe.title}
-                        className="recipe-image"
-                      />
+                      <img src={recipe.image} alt={lang === 'ar' ? recipe.titleAr : recipe.title} className="recipe-image" />
                       <div className="absolute top-3 left-3 flex gap-2">
-                        <span
-                          className="tag-badge"
-                          style={{
-                            background: "rgba(0,0,0,0.5)",
-                            backdropFilter: "blur(5px)",
-                            color: "white",
-                          }}
-                        >
-                          {recipe.cuisine}
+                        <span className="tag-badge" style={{ background: "rgba(0,0,0,0.5)", backdropFilter: "blur(5px)", color: "white" }}>
+                          {t.dataMap[recipe.cuisine] || recipe.cuisine}
                         </span>
                       </div>
                     </div>
 
                     <div className="recipe-content">
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "flex-start",
-                        }}
-                      >
-                        <h3
-                          style={{
-                            fontSize: "1.1rem",
-                            fontWeight: "700",
-                            color: "white",
-                          }}
-                        >
-                          {recipe.title}
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                        <h3 style={{ fontSize: "1.1rem", fontWeight: "700", color: "white" }}>
+                          {lang === 'ar' ? recipe.titleAr : recipe.title}
                         </h3>
                         <Heart size={16} color="rgba(255,255,255,0.5)" />
                       </div>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: "8px",
-                          marginTop: "12px",
-                        }}
-                      >
-                        <span className="tag-badge flex items-center gap-1">
-                          <Clock size={10} /> {recipe.time}m
-                        </span>
-                        <span className="tag-badge flex items-center gap-1">
-                          <Utensils size={10} /> {recipe.protein}g P
-                        </span>
-                        <span className="tag-badge flex items-center gap-1">
-                          <Coins size={10} /> {recipe.cost}
-                        </span>
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginTop: "12px" }}>
+                        <span className="tag-badge flex items-center gap-1"><Clock size={10} /> {recipe.time}m</span>
+                        <span className="tag-badge flex items-center gap-1"><Utensils size={10} /> {recipe.protein}g P</span>
+                        <span className="tag-badge flex items-center gap-1"><Coins size={10} /> {t.dataMap[recipe.cost] || recipe.cost}</span>
                         {recipe.temp === "Cold" && (
                           <span className="tag-badge flex items-center gap-1">
-                            <ThermometerSnowflake size={10} /> Cold
+                            <ThermometerSnowflake size={10} /> {t.dataMap.Cold}
                           </span>
                         )}
                       </div>
 
-                      <button
-                        className="orange-grad"
-                        style={{
-                          width: "100%",
-                          padding: "8px",
-                          borderRadius: "12px",
-                          border: "none",
-                          color: "white",
-                          marginTop: "15px",
-                          fontSize: "0.8rem",
-                          fontWeight: "600",
-                          cursor: "pointer",
-                        }}
-                      >
-                        VIEW RECIPE
+                      <button className="orange-grad" style={{ width: "100%", padding: "8px", borderRadius: "12px", border: "none", color: "white", marginTop: "15px", fontSize: "0.8rem", fontWeight: "600", cursor: "pointer" }}>
+                        {t.viewBtn}
                       </button>
                     </div>
                   </motion.div>
