@@ -232,3 +232,35 @@ a.active {
         box-shadow: none;
     }
 }
+
+.lang-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle-btn:hover {
+    background: #F0660C;
+    border-color: #F0660C;
+}
+
+/* On mobile, make the switcher full width or centered */
+@media (max-width: 850px) {
+    .lang-switcher {
+        order: -1; /* Puts language toggle at the top of the mobile menu */
+        margin-bottom: 10px;
+    }
+    
+    .lang-toggle-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
