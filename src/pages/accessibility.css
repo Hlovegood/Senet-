@@ -180,3 +180,9 @@
     .feature-tabs { grid-template-columns: repeat(2, 1fr); }
     .glass-card-main { grid-template-columns: 1fr; }
 }
+
+.access-badge-pill{
+    display: flex;
+    padding: 24px;
+    justify-content: center;
+}

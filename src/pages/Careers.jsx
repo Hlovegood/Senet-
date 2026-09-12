@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, MapPin, Clock, Users, Heart, Lightbulb } from 'lucide-react';
+import { Briefcase, MapPin, Clock } from 'lucide-react';
 import { useLanguage } from "../LanguageContext";
 
 // Assets (Using your project's local paths)

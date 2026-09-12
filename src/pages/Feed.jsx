@@ -340,6 +340,7 @@ export function RecipeDiscoveryPage() {
       
       return matchTab && matchCost && matchFlavor && matchTemp && matchDiff && matchCuisine && matchMeal;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeTab, filters, lang]);
 
   const handleFilterChange = (e) => {

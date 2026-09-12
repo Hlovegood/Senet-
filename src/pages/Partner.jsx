@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Upload, DollarSign, Users, TrendingUp, CheckCircle, 
+  Upload, DollarSign, Users, CheckCircle, 
   Sparkles, Globe, BarChart3, Headphones, Shield, Rocket, Heart, FileText, Zap
 } from 'lucide-react';
 import { useLanguage } from "../LanguageContext";

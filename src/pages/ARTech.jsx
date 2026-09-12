@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Eye, Mic, Layers, Cpu, Radio, Camera, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Eye, Layers, Cpu, Radio, Zap, Sparkles, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from "../LanguageContext";
 
 import imgSombrero from "../assets/Ingredients/Sombrero.png";

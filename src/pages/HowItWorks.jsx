@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ChefHat,
-  Smartphone,
   Glasses,
   PlayCircle,
-  ArrowRight,
   CheckCircle,
-  Star,
 } from "lucide-react";
 
 import { useLanguage } from "../LanguageContext";

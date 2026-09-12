@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { 
-  ShoppingCart, CheckCircle, AlertCircle, Plus, 
-  Scan, Search, Package, RefreshCw, ArrowRight, TrendingUp,
-  Clock, DollarSign, Lightbulb, X, Edit, ChefHat, FileText, Users
+  ShoppingCart, CheckCircle, Plus, 
+  Scan, Search, Package,
+  Clock, Lightbulb, Edit, Users
 } from 'lucide-react';
 import { useLanguage } from "../LanguageContext";
 import Nav from "../components/Nav";

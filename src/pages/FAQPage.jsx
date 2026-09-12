@@ -4,9 +4,6 @@ import * as Accordion from "@radix-ui/react-accordion";
 import { Link } from "react-router-dom";
 import {
   ChevronDown,
-  MessageCircle,
-  HelpCircle,
-  PlayCircle,
 } from "lucide-react";
 
 import { useLanguage } from "../LanguageContext";

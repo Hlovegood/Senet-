@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  Star, Heart, ChefHat, Trophy, TrendingUp, Target, 
-  Calendar, Clock, Flame, Award, Settings, Edit, 
-  Bookmark, CheckCircle, Mail, MapPin, ChevronRight
+  Star, Heart, ChefHat, Trophy, TrendingUp, 
+  Flame, Award, Settings, Edit, 
+  MapPin, ChevronRight
 } from "lucide-react";
 
 import { useLanguage } from "../LanguageContext";

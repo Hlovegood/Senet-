@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   Mic, Eye, Hand, Volume2, Palette, Smartphone, 
-  Zap, Heart, Users, CheckCircle, Award, Settings, AlertCircle, Languages
+  Zap, Heart, Users, CheckCircle, Award, Languages
 } from 'lucide-react';
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";

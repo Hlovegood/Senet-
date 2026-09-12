@@ -29,8 +29,16 @@
 }
 
 /* 2. Progress Section */
-.text-center { text-align: center; }
-.mb-20 { margin-bottom: 5rem; }
+.text-center { text-align: center; 
+gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+.mb-20 { margin-bottom: 5rem;
+gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
 .mb-12 { margin-bottom: 3rem; }
 
 .progress-container {
